@@ -1,0 +1,15 @@
+# vscode编辑器配置
+.vscode/
+# python编译缓存
+__pycache__/
+*.pyc
+*.pyd
+# conda虚拟环境目录
+env/
+# 日志文件
+logs/
+*.log
+# 环境依赖文件
+.venv/
+# 系统隐藏文件
+.DS_Store
