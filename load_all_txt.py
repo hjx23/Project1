@@ -20,6 +20,16 @@ def read_single_txt(file_path: str | Path):
         print(f"读取失败：{e}")
         return ""
 
+#定义拼接文件夹中txt文档的函数
+def load_all_docs(folder: str = "./docs",max_len=6000): #传参是文件夹地址————默认的
+    dir_path = Path(folder)#拿到对应文件夹的地址
+    txt_list = dir_path.glob("*.txt")#将对应文件夹中的所有txt文件做为迭代器
+    total_text = ""
+    for file in txt_list:
+        text = read_single_txt(file)
+        total_text += f"【{file.name}】:\n{text}\n"
+    return total_text[:max_len]
+
 if __name__ == "__main__":
-    content = read_single_txt("./docs/test.txt")
-    print(content)
+    merge_text = load_all_docs()
+    print(merge_text)
