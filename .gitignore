@@ -13,3 +13,5 @@ logs/
 .venv/
 # 系统隐藏文件
 .DS_Store
+#模型私密配置文件禁止提交github
+model_config.py
